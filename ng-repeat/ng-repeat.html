@@ -1,0 +1,42 @@
+<html ng-app = "myModule">
+<head>
+<title>Example of two way data binding</title>
+<script src = "/home/sushma/angular.min.js"></script>
+<script src = "/home/sushma/projects/trails/javascript/ng-repeatscript.js"></script>
+</head>
+<body style = "font-family:Arial">
+<div ng-controller = "myController">
+	<table>
+		<thead>
+			<tr>
+				<th>Firstname</th>
+				<th>Lastname</th>
+				<th>Gender</th>
+				<th>Salary</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat ="emp in employees">
+			<td>{{emp.firstname}}</td>
+			<td>{{emp.lastname}}</td>
+			<td>{{emp.gender}}</td>
+			<td>{{emp.salary}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<br />
+	<br />
+	</div>
+	<div ng-controller = "myController1">
+		<ul>
+			<li ng-repeat="coun in countries">
+				{{coun.name}} - Index = {{$index}}
+				<ul>
+					<li ng-repeat = "city in coun.cities">
+						{{city.name}} - Parent Index = {{$parent.$index}},Index = {{$index}}
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</body>
+	</html>
