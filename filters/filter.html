@@ -1,0 +1,30 @@
+<html ng-app = "myModule">
+<head>
+<script src = "/home/sushma/angular.min.js"></script>
+<script src = "/home/sushma/projects/trails/javascript/filterscript.js"></script>
+<link href="/home/sushma/projects/trails/CSS/eventstyle.css" rel ="stylesheet" />
+</head>
+<body>
+<div ng-controller = "myController">
+	Rows to display: <input type = "number" step ="1" min = "0" max="3" ng-model ="rowLimit" />
+	<table>
+		<thead>
+			<th>Name</th>
+			<th>DOB</th>
+			<th>Gender</th>
+			<th>Salary(number)</th>
+			<th>Salary(currency)</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="emp in employees | limitTo:rowLimit">
+				<td>{{emp.name | uppercase}}</td>
+				<td>{{emp.DOB | date: "dd/MM/yyyy"}}</td>
+				<td>{{emp.gender | lowercase}}</td>
+				<td>{{emp.salary | number : 2}}</td>
+				<td>{{emp.salary | currency : "E" :1}}</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	</body>
+	</html>
