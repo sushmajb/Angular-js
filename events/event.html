@@ -1,0 +1,32 @@
+<html ng-app = "myModule">
+<head>
+<script src = "/home/sushma/angular.min.js"></script>
+<script src = "/home/sushma/projects/trails/javascript/eventscript.js"></script>
+<link href="/home/sushma/projects/trails/CSS/eventstyle.css" rel ="stylesheet" />
+</head>
+<body>
+<div ng-controller = "myController">
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Likes</th>
+				<th>Dislikes</th>
+				<th>Like/Dislike</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat = "tech in technologies">
+				<td>{{tech.name}}</td>
+				<td>{{tech.likes}}</td>
+				<td>{{tech.dislikes}}</td>
+				<td>
+					<input type = "button" value ="Like" ng-click ="incrementLikes(tech)">
+					<input type = "button" value ="Dislike" ng-click ="incrementDislikes(tech)">
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	</body>
+	</html>
