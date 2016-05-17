@@ -1,0 +1,35 @@
+<html>
+<head>
+<script src = "/home/sushma/angular.min.js"></script>
+<script src = "/home/sushma/projects/trails/javascript/ng-hidescript.js"></script>
+<link href="/home/sushma/projects/trails/CSS/eventstyle.css" rel ="stylesheet" />
+</head>
+<body ng-app = "myModule">
+<div ng-controller = "myController">
+    <input type ="checkbox" ng-model = "hideSalary" />Hide Salary
+    <br />
+    <br />
+	<table>
+		<thead>
+			<tr>
+			<th>Name</th>
+			<th>Gender</th>
+			<th ng-hide ="hideSalary">Salary</th>
+			<th ng-show ="hideSalary">Salary</th>
+			<th>City</th>
+			</tr>
+		<thead>
+		<tbody>
+		<tr ng-repeat = "emp in employees">
+			<td>{{emp.name}}</td>
+			<td>{{emp.gender}}</td>
+			<td ng-hide = "hideSalary">{{emp.salary}}</td>
+			<td ng-show = "hideSalary">####</td>
+			<td>{{emp.city}}</td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>
+
