@@ -1,0 +1,37 @@
+<html ng-app = "myModule">
+<head>
+<script src = "/home/sushma/angular.min.js"></script>
+<script src = "/home/sushma/projects/trails/javascript/sortdatascript.js"></script>
+<link href="/home/sushma/projects/trails/CSS/eventstyle.css" rel ="stylesheet" />
+</head>
+<body>
+<div ng-controller = "myController">
+	OrderBy: <select ng-model = "sortColumn">
+			<option value="name">Name ASC</option>
+			<option value="DOB">DOB ASC</option>
+			<option value="gender">Gender ASC</option>
+			<option value="salary">salary ASC</option>
+		</select>
+<br />
+<br />
+	
+	<table>
+		<thead>
+			<th>Name</th>
+			<th>DOB</th>
+			<th>Gender</th>
+			<th>Salary</th>
+			
+		</thead>
+		<tbody>
+			<tr ng-repeat="emp in employees|orderBy:sortColumn">
+				<td>{{emp.name}}</td>
+				<td>{{emp.DOB | date: "dd/MM/yyyy"}}</td>
+				<td>{{emp.gender}}</td>
+				<td>{{emp.salary}}</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	</body>
+	</html>
