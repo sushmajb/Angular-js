@@ -1,0 +1,25 @@
+<html ng-app = "myModule">
+<head>
+<title>Example of module and controller</title>
+<script src = "/home/sushma/angular.min.js"></script>
+<script src = "/home/sushma/projects/trails/javascript/mcscripts.js"></script>
+</head>
+<body>
+	<div ng-controller = "myController">
+		<div>Firstname : {{emplyoee.firstname}}</div>
+		<div>Lastname : {{emplyoee.lastname}}</div>
+		<div>Age : {{emplyoee.age}}</div>
+	</div>
+	<div ng-controller = "myController1">
+		<div>country name:{{image.countryname}}</div>
+		<div>capital:{{image.capital}}</div>
+		<div>
+			<img ng-src="{{image.flag}}" 
+				alt ="{{image.country + 'flag'}}"
+				style="height:100px; width:200px;" />
+		</div>
+	</div>
+
+
+</body>
+</html>
