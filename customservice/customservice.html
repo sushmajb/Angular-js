@@ -1,0 +1,31 @@
+<html ng-app = "myModule">
+<head>
+<script src = "/home/sushma/angular.min.js"></script>
+<script src = "/home/sushma/projects/trails/javascript/customservice.js"></script>
+<script src = "/home/sushma/projects/trails/javascript/stringService.js"></script>
+<link href="/home/sushma/projects/trails/CSS/eventstyle.css" rel ="stylesheet" />
+</head>
+
+<body ng-controller = "myController">
+<div>
+    <table>
+        <tr>
+            <td>Your String</td>
+            <td><input type = "text" ng-model="input" /></td>
+        </tr>
+        <tr>
+            <td>Result</td>
+            <td><input type = "text" ng-model = "output" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type ="button" value="Process String" ng-click="transformString(input)" />
+             </td>
+         </tr>
+     </table>
+ </div>
+ </body>
+ </html>
+               
+        
