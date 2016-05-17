@@ -1,0 +1,33 @@
+<html>
+<head>
+<script src = "/home/sushma/angular.min.js"></script>
+<script src = "/home/sushma/projects/trails/javascript/multiplesearch2.js"></script>
+<link href="/home/sushma/projects/trails/CSS/eventstyle.css" rel ="stylesheet" />
+</head>
+<body ng-app = "myModule">
+<div ng-controller = "myController">
+<input type="text" placeholder="Search name & city" ng-model="searchText" />
+
+<br /><br />
+	<table>
+		<thead>
+			<tr>
+			<th>Name</th>
+			<th>Gender</th>
+			<th>Salary</th>
+			<th>City</th>
+			</tr>
+		<thead>
+		<tbody>
+		<tr ng-repeat = "emp in employees | filter:search">
+			<td>{{emp.name}}</td>
+			<td>{{emp.gender}}</td>
+			<td>{{emp.salary}}</td>
+			<td>{{emp.city}}</td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>
+
